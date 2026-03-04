@@ -255,10 +255,33 @@
   </footer>
 
   <script>
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      document.getElementById('success').classList.remove('hidden');
-      e.target.reset();
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const email = form.querySelector('input[type="email"]').value.trim();
+
+      btn.textContent = 'Joining...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+
+        if (res.ok) {
+          document.getElementById('success').classList.remove('hidden');
+          form.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        btn.textContent = 'Count me in →';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again.');
+      }
     }
   </script>
 
