@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TheSideQuest Co — Beyond the Case Study</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    .playfair { font-family: 'Playfair Display', serif; }
+    .grain {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+    .hero-glow {
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(217,119,6,0.18) 0%, transparent 70%);
+    }
+    .amber-glow {
+      box-shadow: 0 0 40px rgba(217,119,6,0.25);
+    }
+    .card-hover {
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(217,119,6,0.5);
+    }
+    .tag {
+      background: rgba(217,119,6,0.12);
+      border: 1px solid rgba(217,119,6,0.3);
+      color: #FBBF24;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    .float { animation: float 4s ease-in-out infinite; }
+    .gradient-text {
+      background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .egypt-bg {
+      background: linear-gradient(180deg, #0a0a0a 0%, #0f0a00 50%, #0a0a0a 100%);
+    }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-[#080808] text-white min-h-screen overflow-x-hidden">
+
+  <!-- Grain overlay -->
+  <div class="fixed inset-0 grain pointer-events-none z-0 opacity-60"></div>
+
+  <!-- Nav -->
+  <nav class="relative z-50 flex items-center justify-between px-6 md:px-12 py-6 max-w-7xl mx-auto">
+    <div class="flex items-center gap-2">
+      <span class="text-amber-400 text-xl">⟡</span>
+      <span class="font-bold text-white tracking-tight text-lg">TheSideQuest<span class="text-amber-400">Co</span></span>
+    </div>
+    <a href="#waitlist" class="text-sm font-medium bg-amber-500 hover:bg-amber-400 text-black px-5 py-2.5 rounded-full transition-all duration-200 hover:scale-105">
+      Join the Waitlist
+    </a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative z-10 hero-glow min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-10 pb-20">
+    <div class="inline-flex items-center gap-2 tag text-xs font-semibold px-4 py-2 rounded-full mb-8 uppercase tracking-widest float">
+      <span>🗺️</span> First Quest: Egypt · 2025
+    </div>
+
+    <h1 class="playfair text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] max-w-4xl mb-6">
+      Beyond the<br/>
+      <span class="gradient-text italic">Case Study.</span>
+    </h1>
+
+    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed font-light">
+      Curated immersion trips for ambitious MBAs — where<br class="hidden md:block"/>
+      real markets meet real adventure.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+      <a href="#waitlist" class="bg-amber-500 hover:bg-amber-400 text-black font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 hover:scale-105 amber-glow">
+        Reserve Your Spot →
+      </a>
+      <a href="#about" class="text-gray-400 hover:text-white font-medium px-6 py-4 transition-colors duration-200 text-base">
+        What is this? ↓
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      <div class="w-px h-12 bg-gradient-to-b from-amber-400 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4">What is a SideQuest?</p>
+        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          The MBA elective<br/>they don't teach<br/>in class.
+        </h2>
+        <p class="text-gray-400 text-lg leading-relaxed mb-6">
+          TheSideQuest Co takes you off the beaten path — literally. We design high-impact immersion trips to emerging markets, blending startup ecosystem access, founder meetings, and policy deep-dives with actual adventure.
+        </p>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Because the best business lessons don't happen in lecture halls. They happen in souks, co-working spaces, and conversations with people building the future in places most people are still Googling.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-[#111] border border-[#222] card-hover rounded-2xl p-6">
+          <div class="text-3xl mb-3">🌍</div>
+          <h3 class="font-semibold text-white mb-2">Emerging Markets</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Go where the growth is happening — before everyone else shows up.</p>
+        </div>
+        <div class="bg-[#111] border border-[#222] card-hover rounded-2xl p-6 mt-6">
+          <div class="text-3xl mb-3">🤝</div>
+          <h3 class="font-semibold text-white mb-2">Real Access</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Founders, investors, and changemakers. Not panels — actual conversations.</p>
+        </div>
+        <div class="bg-[#111] border border-[#222] card-hover rounded-2xl p-6">
+          <div class="text-3xl mb-3">🧭</div>
+          <h3 class="font-semibold text-white mb-2">Curated Journey</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Every detail planned. Every experience intentional. Zero fluff.</p>
+        </div>
+        <div class="bg-[#111] border border-[#222] card-hover rounded-2xl p-6 mt-6">
+          <div class="text-3xl mb-3">⚡</div>
+          <h3 class="font-semibold text-white mb-2">Adventure-First</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Work hard, explore harder. This isn't a study tour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Egypt Section -->
+  <section class="relative z-10 egypt-bg py-24 border-y border-[#1a1400]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <span class="tag text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-widest inline-block mb-6">Quest #001</span>
+        <h2 class="text-5xl md:text-6xl font-bold mb-6">
+          First stop:<br/><span class="gradient-text">Egypt.</span>
+        </h2>
+        <p class="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">
+          One of the world's oldest civilisations is building one of its most exciting startup ecosystems. You should see it firsthand.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="bg-[#0f0a00] border border-amber-900/30 rounded-2xl p-8 card-hover">
+          <div class="text-amber-400 text-4xl mb-4">🏛️</div>
+          <h3 class="text-xl font-bold mb-3">Ecosystem Immersion</h3>
+          <p class="text-gray-500 leading-relaxed">Meet the founders, VCs, and operators building Egypt's tech and commerce landscape from the inside out.</p>
+        </div>
+        <div class="bg-[#0f0a00] border border-amber-900/30 rounded-2xl p-8 card-hover">
+          <div class="text-amber-400 text-4xl mb-4">🐪</div>
+          <h3 class="text-xl font-bold mb-3">The Adventure</h3>
+          <p class="text-gray-500 leading-relaxed">From Cairo's streets to the Sahara at sunrise — structured exploration of a country that genuinely surprises you.</p>
+        </div>
+        <div class="bg-[#0f0a00] border border-amber-900/30 rounded-2xl p-8 card-hover">
+          <div class="text-amber-400 text-4xl mb-4">🌐</div>
+          <h3 class="text-xl font-bold mb-3">Global MBA Cohort</h3>
+          <p class="text-gray-500 leading-relaxed">Travel with a curated group of MBAs from top programs around the world. Your network gets a serious upgrade.</p>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border border-[#1a1400] rounded-2xl p-8 bg-[#0a0800]">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-amber-400 mb-1">7</div>
+          <div class="text-gray-500 text-sm">Days on the ground</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-amber-400 mb-1">10+</div>
+          <div class="text-gray-500 text-sm">Ecosystem sessions</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-amber-400 mb-1">~20</div>
+          <div class="text-gray-500 text-sm">MBAs per cohort</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-amber-400 mb-1">∞</div>
+          <div class="text-gray-500 text-sm">Stories to tell</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24">
+    <div class="text-center mb-16">
+      <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4">Who's this for?</p>
+      <h2 class="text-4xl md:text-5xl font-bold">Built for MBAs who are<br/>already thinking differently.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-[#1f1f1f] rounded-2xl p-8 card-hover bg-[#0d0d0d]">
+        <p class="text-gray-300 text-lg leading-relaxed mb-6">"I want global perspective, not just a global certificate."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 text-sm">🎓</div>
+          <span class="text-gray-500 text-sm">The Curious MBA</span>
+        </div>
+      </div>
+      <div class="border border-[#1f1f1f] rounded-2xl p-8 card-hover bg-[#0d0d0d]">
+        <p class="text-gray-300 text-lg leading-relaxed mb-6">"I want to understand emerging markets — not just read about them in a report."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 text-sm">🌍</div>
+          <span class="text-gray-500 text-sm">The Future Operator</span>
+        </div>
+      </div>
+      <div class="border border-[#1f1f1f] rounded-2xl p-8 card-hover bg-[#0d0d0d]">
+        <p class="text-gray-300 text-lg leading-relaxed mb-6">"I want to build a global network that actually means something."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 text-sm">🤝</div>
+          <span class="text-gray-500 text-sm">The Connector</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist -->
+  <section id="waitlist" class="relative z-10 py-24 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <span class="tag text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-widest inline-block mb-8">Spots are limited</span>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        Ready for your<br/><span class="gradient-text">SideQuest?</span>
+      </h2>
+      <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+        Egypt is just the beginning. Join the waitlist and be first in line when we open applications.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="handleSubmit(event)">
+        <input
+          type="email"
+          placeholder="your@mba.edu"
+          required
+          class="flex-1 bg-[#111] border border-[#2a2a2a] focus:border-amber-500 text-white placeholder-gray-600 px-5 py-4 rounded-full outline-none transition-colors text-base"
+        />
+        <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-black font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 whitespace-nowrap amber-glow">
+          Count me in →
+        </button>
+      </form>
+      <p class="text-gray-600 text-sm mt-4">No spam. Just quest updates.</p>
+      <div id="success" class="hidden mt-6 text-amber-400 font-medium">🎉 You're on the list. Adventure incoming.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-[#111] py-10 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="text-amber-400">⟡</span>
+      <span class="font-bold text-white tracking-tight">TheSideQuest<span class="text-amber-400">Co</span></span>
+    </div>
+    <p class="text-gray-600 text-sm">The world is the classroom. Go explore it.</p>
+    <p class="text-gray-700 text-sm">© 2025 TheSideQuest Co</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('success').classList.remove('hidden');
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>
